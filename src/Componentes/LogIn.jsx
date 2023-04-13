@@ -8,13 +8,22 @@ export default function LogIn() {
   const [contraseña, setContraseña] = useState('');
 
 
-  const guardarUsuario = () => {
+  const guardarUsuario = (e) => {
 
-    const usurios = [{
-      correo: setCorreo(e.target.value),
-      contraseña: setContraseña(e.target.value)
-    }]
+    setCorreo(e.target.value);
+    setContraseña(e.target.value);
     
+    const usuarioNuevo = {
+      
+      correo: correo,
+      contraseña: contraseña
+
+    };
+    
+    console.log(usuarioNuevo);
+
+    
+
   };
 
 
@@ -33,7 +42,7 @@ export default function LogIn() {
 
       <h1 className='titulo'>LogIn</h1>
 
-      <TextField id="outlined-basic" label="Correo" variant="outlined" />
+      <TextField onChange={guardarUsuario} id="outlined-basic" label="Correo" variant="outlined" />
       <TextField id="outlined-password-input" label="Contraseña" type="password" autoComplete="current-password"/>
 
       <Button sx={{ marginTop: 4, marginBottom: 1 }} variant="outlined">Iniciar Sesion</Button>
