@@ -3,7 +3,12 @@ import '@fontsource/roboto/400.css';
 import LogIn from './Componentes/LogIn';
 function App() {
   return (
+    <>
     <LogIn className="LogIn" />
+    
+    <LogIn className="LogIn" />
+    </>
+    
   );
 }
 
